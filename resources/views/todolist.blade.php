@@ -93,6 +93,10 @@
             }
             document.querySelector("#listdel").addEventListener("click", removeList)
 
+            function test(){
+                var av = "ddddd";
+            }
+
         </script>
     </body>
 </html>
