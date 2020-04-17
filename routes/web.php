@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TodolistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +20,16 @@ Route::get('/', function () {
 
 Route::get('/todolist', function () {
     return view('todolist');
+});
+
+Route::prefix('/api')->group(function () {
+    Route::get('/todolist', 'TodolistController@index');
+    
+    Route::get('/todolist/{id}', 'TodolistController@show');
+    
+    Route::post('/todolist', 'TodolistController@store');
+    
+    Route::put('/todolist/{id}', 'TodolistController@update');
+    
+    Route::delete('/todolist/{id}', 'TodolistController@remove');
 });
